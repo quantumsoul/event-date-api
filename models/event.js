@@ -2,21 +2,27 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 const jwt = require('jsonwebtoken')
 const eventSchema = new mongoose.Schema({
-    emailId:{
+    eventTitle:{
         type: String,
-        req: true
+        trim:true
     },
-    clientId: {
-      type: mongoose.SchemaTypes.ObjectId,
+    location: {
+      type: String
     },
-    type: {
-      type: String,
-      default: 'Sales',
+    allDay: {
+      type: Boolean,
+      default: false
     },
-    SAL_TYPE:{
+    start:{
+      type: Date
+    },
+    end:{
+      type: Date
+    },
+    eventDescription:{
       type: String,
       trim: true
-    },
+    }
 })
 const Event = mongoose.model('Event', salesSchema)
 module.exports = Event
