@@ -1,6 +1,4 @@
 const mongoose = require('mongoose')
-const validator = require('validator')
-const jwt = require('jsonwebtoken')
 const eventSchema = new mongoose.Schema({
     eventTitle:{
         type: String,
