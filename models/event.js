@@ -22,5 +22,5 @@ const eventSchema = new mongoose.Schema({
       trim: true
     }
 })
-const Event = mongoose.model('Event', salesSchema)
+const Event = mongoose.model('Event', eventSchema)
 module.exports = Event
