@@ -56,7 +56,7 @@ router.delete("/delete/event",async(req,res)=>{
         res.status(400)
     }
 });
-router.post("/v2/edit/event",async(req,res)=>{
+router.patch("/v2/edit/event",async(req,res)=>{
     try {
         const event = await EventCapacity.findByIdAndUpdate(    
             req.query.id,
@@ -69,7 +69,7 @@ router.post("/v2/edit/event",async(req,res)=>{
         res.status(400)
     }
 });
-router.get("/v2/delete/event",async(req,res)=>{
+router.delete("/v2/delete/event",async(req,res)=>{
     try {
         const event = await EventCapacity.findByIdAndDelete(req.query.id)
         res.send(event)
